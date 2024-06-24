@@ -63,7 +63,7 @@ checkAuth();
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button id='saveBtn' type="button" class="btn btn-success">Save Changes</button>
+              <button type="submit" class="btn btn-success">Save Changes</button>
             </div>
           </div>
         </div>
@@ -164,6 +164,11 @@ checkAuth();
         data: data,
         success: function(response) {
           console.log(response);
+          if (response.isTaken === "true") {
+            alert("Username or Email already taken!");
+          }
+          loadProfile();
+          $('#mod_editProfile .btn-close').click();
         },
         error: function(error) {
           console.log("update profile", error);

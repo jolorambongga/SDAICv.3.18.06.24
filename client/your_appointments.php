@@ -13,7 +13,7 @@ checkAuth();
   <div class="container-fluid">
     <div class="row">
       <div class="col-4">
-        <h1>Your active appointments</h1>
+        <h1>Your appointments</h1>
       </div>
     </div>
     <!-- add button -->
