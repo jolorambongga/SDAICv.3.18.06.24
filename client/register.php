@@ -7,10 +7,9 @@ $active_new_appointment = "";
 include_once('header.php');
 include_once('handles/auth.php');
 checkLoggedIn();
-?>	
+?>  
 
 <link rel="stylesheet" href="../includes/css/my_register.css">
-
 <div class="my-wrapper">
   <div class="register-wrapper">
     <div class="container-fluid">
@@ -55,13 +54,19 @@ checkLoggedIn();
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 mb-3">
+              <div class="col-md-12 mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" name="username" aria-describedby="username" maxlength="12" required>
+                <input type="text" class="form-control" id="username" name="username" aria-describedby="username" required>
               </div>
+            </div>
+            <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" name="password" aria-describedby="password" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" aria-describedby="confirmPassword" required>
               </div>
             </div>
             <button type="submit" class="btn btn-mydark float-end">Submit</button>
@@ -77,9 +82,14 @@ checkLoggedIn();
   </div>
 </div>
 
+
+
+
+
+
 <script>
   $(document).ready(function(){
-  // Function to validate username on keypress
+    // Function to validate username on keypress
     $("#username").on("keypress", function(event) {
       var regex = /^[a-z]+$/;
       var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -91,10 +101,10 @@ checkLoggedIn();
 
     $("#contact").on("keypress", function(event) {
       var keyCode = event.which ? event.which : event.keyCode;
-    if (keyCode < 48 || keyCode > 57) { // Allow only 0-9
-      event.preventDefault();
-    }
-  });
+      if (keyCode < 48 || keyCode > 57) { // Allow only 0-9
+        event.preventDefault();
+      }
+    });
 
     $("#username").on("input", function() {
       $(this).val(function(_, val) {
@@ -104,12 +114,20 @@ checkLoggedIn();
 
     $("#contact").on("input", function() {
       $(this).val(function(_, val) {
-      return val.replace(/\s/g, ''); // Remove spaces
-    });
+        return val.replace(/\s/g, ''); // Remove spaces
+      });
     });
 
     $("#frm_register").on("submit", function(event){
       event.preventDefault();
+
+      var password = $("#password").val().trim();
+      var confirmPassword = $("#confirmPassword").val().trim();
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+      }
 
       var username = $("#username").val().trim();
       if (!/^[a-z]+$/.test(username)) {
@@ -138,9 +156,9 @@ checkLoggedIn();
       });
     });
   });
-
 </script>
+
 
 <?php
 include_once('footer.php');
-?>	
+?>  

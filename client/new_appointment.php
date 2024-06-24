@@ -161,7 +161,20 @@ checkAuth();
         <p><strong>Appointment Time:</strong> ${appointment_time}</p>
         `);
     }
+        // Get the current date and time
+        let now = new Date();
+        let year = now.getFullYear();
+        let month = ('0' + (now.getMonth() + 1)).slice(-2); // Months are zero-indexed, so add 1
+        let day = ('0' + now.getDate()).slice(-2);
+        let hours = ('0' + now.getHours()).slice(-2);
+        let minutes = ('0' + now.getMinutes()).slice(-2);
 
+        // Format the date and time as required by the input element
+        let currentDateTime = `${year}-${month}-${day}T${hours}:${minutes}`;
+
+        // Set the min attribute to the current date and time
+        document.getElementById('appointment_datetime').setAttribute('min', currentDateTime);
+        
     // Function to format date as "Day, Month Day, Year"
     function formatDate(dateString) {
       var date = new Date(dateString);

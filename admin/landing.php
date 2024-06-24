@@ -51,10 +51,6 @@ include_once('header.php');
           <div class="modal-body">
             <!-- start service name -->
 
-            <?php
-            include_once('modals/clinic_sched_modal.php');
-            ?>
-
             <!-- about us -->
             <label for="about_us" class="form-label">About Us</label>
             <textarea id="about_us" class="form-control" required></textarea>

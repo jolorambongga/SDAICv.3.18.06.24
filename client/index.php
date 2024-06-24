@@ -9,7 +9,7 @@ include_once('header.php');
 
 <body>
   <!-- nav bar -->
-  <div style="background-image: url(https://wallpaperaccess.com/full/1282798.jpg); width: 100%; height: 700px;">
+  <div style="background-image: url(https://wallpaperaccess.com/full/1282798.jpg); width: 100%; height: 700px; overflow-x: hidden;">
     <div class="my-wrapper">
       <div class="navbar navbar-expand-lg" style="margin-bottom: 45px; margin-top: 50px;">
         <div class="container-fluid justify-content-center">
@@ -39,9 +39,12 @@ include_once('header.php');
       </div>
     </div>
   </div>
-  <div style="text-align: center; margin-bottom: 60px; background-color: white;">
-    <img src="https://cdn.discordapp.com/attachments/489358237343416320/1254446687850729512/step.png?ex=66798604&is=66783484&hm=9a73d53787e6a67ea08b03b820667b1c901ebc14c8456c9eb9eabc24e9db31e1&" alt="steps" style="width: 800px; height: auto; display: block; margin-left: auto; margin-right: auto;">
-  </div>
+
+  <div style="text-align: center; margin-bottom: 60px; background-color: white; overflow-x: hidden;">
+    <img src="https://cdn.discordapp.com/attachments/489358237343416320/1254446687850729512/step.png?ex=66798604&is=66783484&hm=9a73d53787e6a67ea08b03b820667b1c901ebc14c8456c9eb9eabc24e9db31e1&" alt="steps" style="width: 800px; height: auto;">
+</div>
+
+
 
   <div class="about-us-container" style="display: flex;">
     <div class="about-us" style="padding: 20px 60px 20px 40px; border-left: 8px solid #4c3d3d; flex-grow: 1; margin-right: auto;">
