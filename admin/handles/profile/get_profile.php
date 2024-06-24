@@ -6,7 +6,7 @@ try {
 
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	$user_id = $_POST['user_id'];
+	$user_id = $_GET['user_id'];
 
 	$sql = "SELECT * FROM tbl_Users WHERE user_id = :user_id;";
 

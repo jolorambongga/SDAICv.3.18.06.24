@@ -47,7 +47,7 @@ checkAuth();
               <input type="text" id="e_first_name" class="form-control" required>
               <pre></pre>
               <label for="e_middle_name" class="form-label">Middle Name</label>
-              <input type="text" id="e_middle_name" class="form-control" required>
+              <input type="text" id="e_middle_name" class="form-control">
               <pre></pre>
               <label for="e_last_name" class="form-label">Last Name</label>
               <input type="text" id="e_last_name" class="form-control" required>
